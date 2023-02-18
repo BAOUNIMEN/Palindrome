@@ -1,0 +1,27 @@
+FUNCTION Palindrom(str:STRING): BOOLEAN 
+VAR
+   
+    
+BEGIN
+    IF (str.length()<2) THEN
+        Palindrom:=true
+    ELSE_IF (str[1]<>str.length()) THEN
+        Palindrome:=false;
+    ELSE
+        Palindrom:=Palindrom(copy(str,2,str.length()-2));
+    END_IF
+    RETURN Palindrom ;
+END
+
+ALGORITHM Palindrome_test
+VAR
+    str:STRING;
+BEGIN
+    write("gives a string: ");
+    read(str);
+    IF (Palindrome(str)=true) THEN
+        write (str,"is palindrom")
+    ELSE
+        write(str,"is not palindrom")
+    END_IF
+END
